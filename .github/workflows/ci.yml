@@ -1,0 +1,14 @@
+name: CI  # Name your workflow (shows in Actions tab)
+
+on: [push, pull_request]  # Triggers: when code is pushed or PR opened
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Free virtual machine to run on
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4  # Grabs your repo code
+      
+    - name: Run a test
+      run: echo "Hello, tests pass!"  # Simple command that always succeeds
